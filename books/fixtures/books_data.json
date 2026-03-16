@@ -1,0 +1,57 @@
+[
+    {
+        "model": "books.book",
+        "pk": 1,
+        "fields": {
+            "title": "Clean Code",
+            "author": "Robert Martin",
+            "cover": "HARD",
+            "inventory": 5,
+            "daily_fee": "1.50"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 2,
+        "fields": {
+            "title": "The Pragmatic Programmer",
+            "author": "David Thomas",
+            "cover": "SOFT",
+            "inventory": 3,
+            "daily_fee": "1.00"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 3,
+        "fields": {
+            "title": "Python Crash Course",
+            "author": "Eric Matthes",
+            "cover": "SOFT",
+            "inventory": 7,
+            "daily_fee": "0.75"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 4,
+        "fields": {
+            "title": "Django for Beginners",
+            "author": "William Vincent",
+            "cover": "HARD",
+            "inventory": 4,
+            "daily_fee": "1.25"
+        }
+    },
+    {
+        "model": "books.book",
+        "pk": 5,
+        "fields": {
+            "title": "Two Scoops of Django",
+            "author": "Daniel Feldroy",
+            "cover": "HARD",
+            "inventory": 2,
+            "daily_fee": "2.00"
+        }
+    }
+]
