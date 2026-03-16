@@ -29,38 +29,43 @@ Online management system for book borrowings.
 
 1. Clone the repository:
 ```
-git clone https://github.com/nastasy-s/library-service.git
-cd library-service
+   git clone https://github.com/nastasy-s/library-service.git
+   cd library-service
 ```
 
 2. Create `.env` file:
 ```
-SECRET_KEY=your-secret-key
-DEBUG=True
-ALLOWED_HOSTS=localhost,127.0.0.1
-DB_HOST=db
-DB_NAME=library_db
-DB_USER=library_user
-DB_PASSWORD=library_pass
-DB_PORT=5432
-TELEGRAM_BOT_TOKEN=your-telegram-bot-token
-TELEGRAM_CHAT_ID=your-chat-id
+   SECRET_KEY=your-secret-key
+   DEBUG=True
+   ALLOWED_HOSTS=localhost,127.0.0.1
+   DB_HOST=db
+   DB_NAME=library_db
+   DB_USER=library_user
+   DB_PASSWORD=library_pass
+   DB_PORT=5432
+   TELEGRAM_BOT_TOKEN=your-telegram-bot-token
+   TELEGRAM_CHAT_ID=your-chat-id
 ```
 
 3. Run with Docker:
 ```
-docker-compose up --build
+   docker-compose up --build
 ```
 
 4. Create superuser:
 ```
-docker-compose exec web python manage.py createsuperuser
+   docker-compose exec web python manage.py createsuperuser
 ```
 
-5. Open in browser:
-- API: http://localhost:8000/api/
-- Swagger: http://localhost:8000/api/doc/swagger/
-- Admin: http://localhost:8000/admin/
+5. Load initial data (optional):
+```
+   docker-compose exec web python manage.py loaddata books/fixtures/books_data.json
+```
+
+6. Open in browser:
+   - API: http://localhost:8000/api/
+   - Swagger: http://localhost:8000/api/doc/swagger/
+   - Admin: http://localhost:8000/admin/
 
 ## API Endpoints
 
@@ -94,10 +99,5 @@ docker-compose exec web coverage run manage.py test
 docker-compose exec web coverage report
 ```
 
-## Load initial data (optional):
-```
-docker-compose exec web python manage.py loaddata books/fixtures/books_data.json
-```
-
 ## Author
-Anastasiia Tarasenko
+Anastasiia Savchenko
