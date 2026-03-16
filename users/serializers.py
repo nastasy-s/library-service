@@ -17,7 +17,7 @@ class UserSerializer(serializers.ModelSerializer):
         )
         extra_kwargs = {
             "password": {
-                "write_only": True,  # пароль не показується у відповіді
+                "write_only": True,
                 "min_length": 5,
             }
         }
