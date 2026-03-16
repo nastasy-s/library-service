@@ -145,3 +145,5 @@ SPECTACULAR_SETTINGS = {
     "DESCRIPTION": "API for managing books, borrowings and payments",
     "VERSION": "1.0.0",
 }
+
+AUTH_USER_MODEL = "users.User"
