@@ -1,3 +1,4 @@
+from notifications.telegram import send_telegram_message
 from rest_framework import mixins, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
@@ -45,7 +46,13 @@ class BorrowingViewSet(
         return BorrowingSerializer
 
     def perform_create(self, serializer):
-        serializer.save(user=self.request.user)
+        borrowing = serializer.save(user=self.request.user)
+        send_telegram_message(
+            f"📚 New borrowing created!\n"
+            f"User: {borrowing.user.email}\n"
+            f"Book: {borrowing.book.title}\n"
+            f"Expected return: {borrowing.expected_return_date}"
+    )
 
     @action(detail=True, methods=["POST"], url_path="return")
     def return_borrowing(self, request, pk=None):
